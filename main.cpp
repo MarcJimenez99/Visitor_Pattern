@@ -51,36 +51,29 @@ int main(){
     DubOp* x = new DubOp(3.5);
     DubOp* y = new DubOp(-4.3);
     
-    Sub* s1 = new Sub(x, y);
+    Add* a1 = new Add(x, y);
     
-    Ceil* c1 = new Ceil(s1);
+    Ceil* c1 = new Ceil(a1);
     CountVisitor* visitor = new CountVisitor();
     
     cout << c1->stringify() << endl;
     
     PreorderIterator* iter = new PreorderIterator(c1);
     
-    iter->current()->accept(visitor);
 
     iter->first();
-    //cout << iter->current()->stringify() << endl;
     iter->current()->accept(visitor);
-    //visitor->PrintVisitor();
-    
+    cout << "1" << endl;
     iter->next();
-    //cout << iter->current()->stringify() << endl;
     iter->current()->accept(visitor);
-    //visitor->PrintVisitor();
-    
+    cout << "2" << endl;
     iter->next();
-    //cout << iter->current()->stringify() << endl;
     iter->current()->accept(visitor);
-    //visitor->PrintVisitor();
-	
+	cout << "3" << endl;
 	cout << "Ops: " << visitor->op_count() << endl;
-	cout << "Mults: " << visitor->mult_count() << endl;
+	cout << "Add: " << visitor->add_count() << endl;
     
-    
+   
     
 }
 
