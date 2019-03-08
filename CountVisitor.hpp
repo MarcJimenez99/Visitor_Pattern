@@ -51,84 +51,72 @@ class CountVisitor {
             ++this->ops;
         }
         int op_count() {
-            cout << "Number of Ops visited: " << endl;
-            return this->ops;
+		return this->ops;
         }
         void visit_rand() {
             ++this->rands;
         }
         int rand_count() {
-            cout << "Number of Rands visited: " << endl;
             return this->rands;
         }
         void visit_mult() {
             ++this->mults;
         }
         int mult_count() {
-            cout << "Number of Mults visited: " << endl;
-            return this->mults;
+		return this->mults;
         }
         void visit_div() {
             ++this->divs;
         }
         int div_count() {
-            cout << "Number of Divs visited: " << endl;
             return this->divs;
         }
         void visit_add() {
             ++this->add;
         }
         int add_count() {
-            cout << "Number of Adds visited: " << endl;
             return this->add;
         }
         void visit_sub() {
             this->sub++;
         }
         int sub_count() {
-            cout << "Number of Subs visited: " << endl;
             return this->sub;
         }
         void visit_pow() {
             this->pow++;
         }
         int pow_count() {
-            cout << "Number of Pows visited: " << endl;
             return this->pow;
         }
         void visit_ceil() {
             this->ceil++;
         }
         int ceil_count() {
-            cout << "Number of Ceils visited: " << endl;
             return this->ceil;
         }
         void visit_floor() {
             this->floor++;
         }
         int floor_count() {
-            cout << "Number of Floors visited: " << endl;
             return this->floor;
         }
         void visit_abs() {
             this->abs++;
         }
         int abs_count() {
-            cout << "Number of Abs visited: " << endl;
             return this->abs;
         }
         void visit_trunc() {
             this->trunc++;
         }
         int trunc_count() {
-            cout << "Number of Truncs visited: " << endl;
             return this->trunc;
         }
         void visit_paren() {
             this->paren++;
         }
         int paren_count() {
-            cout << "Number of Parens visited: " << endl;
             return this->paren;
         }
 };

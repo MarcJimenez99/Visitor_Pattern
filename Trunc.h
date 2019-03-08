@@ -4,6 +4,7 @@
 #include "base.hpp"
 #include <string>
 #include "UnaryIterator.h"
+#include "CountVisitor.hpp"
 
 using namespace std;
 

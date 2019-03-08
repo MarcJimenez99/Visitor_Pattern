@@ -4,17 +4,21 @@
 #include "Div.cpp"
 #include "Add.cpp"
 #include "Sub.cpp"
-#include "Ceil.cpp"
+#include "Ceil.h"
+#include "Floor.h"
+#include "Abs.h"
+#include "Trunc.h"
+#include "Paren.h"
 #include "Decorator.hpp"
 #include "Rand.hpp"
 #include "Op.hpp"
-#include "DubOp.cpp"
-#include "DoubRand.cpp"
+#include "DubOp.h"
+#include "DoubRand.h"
 #include "Iterator.hpp"
-#include "BinaryIterator.cpp"
-#include "NullIterator.cpp"
-#include "UnaryIterator.cpp"
-#include "PreorderIterator.cpp"
+#include "BinaryIterator.h"
+#include "NullIterator.h"
+#include "UnaryIterator.h"
+#include "PreorderIterator.h"
 #include "CountVisitor.hpp"
 #include <list>
 #include <string>
@@ -47,12 +51,7 @@ int main(){
     DubOp* x = new DubOp(3.5);
     DubOp* y = new DubOp(-4.3);
     
-    DubOp* xx = new DubOp(2.8);
-    DubOp* yy = new DubOp(10.6);
-    
-    Mult* m1 = new Mult(x, y);
-    Add* a1 = new Add(m1, xx);
-    Sub* s1 = new Sub(a1, y);
+    Sub* s1 = new Sub(x, y);
     
     Ceil* c1 = new Ceil(s1);
     CountVisitor* visitor = new CountVisitor();
@@ -61,6 +60,8 @@ int main(){
     
     PreorderIterator* iter = new PreorderIterator(c1);
     
+    iter->current()->accept(visitor);
+
     iter->first();
     //cout << iter->current()->stringify() << endl;
     iter->current()->accept(visitor);
@@ -75,26 +76,9 @@ int main(){
     //cout << iter->current()->stringify() << endl;
     iter->current()->accept(visitor);
     //visitor->PrintVisitor();
-    
-    iter->next();
-    //cout << iter->current()->stringify() << endl;
-    iter->current()->accept(visitor);
-    //visitor->PrintVisitor();
-    
-    iter->next();
-    //cout << iter->current()->stringify() << endl;
-    iter->current()->accept(visitor);
-    //visitor->PrintVisitor();
-    
-    iter->next();
-    //cout << iter->current()->stringify() << endl;
-    iter->current()->accept(visitor);
-    //visitor->PrintVisitor();
-    
-    iter->next();
-    //cout << iter->current()->stringify() << endl;
-    iter->current()->accept(visitor);
-    visitor->PrintVisitor();
+	
+	cout << "Ops: " << visitor->op_count() << endl;
+	cout << "Mults: " << visitor->mult_count() << endl;
     
     
     

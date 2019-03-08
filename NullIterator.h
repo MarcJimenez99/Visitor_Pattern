@@ -4,6 +4,7 @@
 #include <iosfwd>
 #include <string>
 #include <iostream>
+#include "Iterator.hpp"
 
 using namespace std;
 

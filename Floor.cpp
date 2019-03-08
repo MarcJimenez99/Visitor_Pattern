@@ -23,6 +23,6 @@ Iterator* Floor::create_iterator(){
 	UnaryIterator* iter = new UnaryIterator(this);
 	return iter;
 }
-void Ceil::Floor(CountVisitor* visitor) {
+void Floor::accept(CountVisitor* visitor) {
 	visitor->visit_floor();
 }

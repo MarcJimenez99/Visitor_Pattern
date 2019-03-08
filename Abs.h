@@ -5,6 +5,7 @@
 #include <cmath>
 #include <math.h>
 #include "UnaryIterator.h"
+#include "CountVisitor.hpp"
 
 using namespace std;
 
